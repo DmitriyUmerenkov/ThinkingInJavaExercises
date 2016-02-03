@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+/**
+ * @author ִלטענטי
+ *
+ */
+package strings;
