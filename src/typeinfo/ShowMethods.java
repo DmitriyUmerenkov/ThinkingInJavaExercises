@@ -10,8 +10,8 @@ private static String usage =
 "ShowMethods qualified.class.name\n" +
 "To show all methods in class or:\n" +
 "ShowMethods qualified.class.name word\n" +
-"To search for methods involving ‘word’";
-private static Pattern p = Pattern.compile("\\w+\\.|native |final ");
+"To search for methods involving ï¿½wordï¿½";
+private static Pattern p = Pattern.compile("\\w+\\.|native |final");
 public static void main(String[] args) {
 if(args.length < 1) {
 print(usage);

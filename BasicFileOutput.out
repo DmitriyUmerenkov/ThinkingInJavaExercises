@@ -1,0 +1,76 @@
+77: package util;
+78: 
+79: import java.io.*;
+80: import java.util.*;
+81: 
+82: public class TextFile extends ArrayList<String> {
+83:   // Read a file as a single string:
+84:   public static String read(String fileName) {
+85:     StringBuilder sb = new StringBuilder();
+86:     try {
+87:       BufferedReader in= new BufferedReader(new FileReader(
+88:         new File(fileName).getAbsoluteFile()));
+89:       try {
+90:         String s;
+91:       while((s = in.readLine()) != null) {
+92:     sb.append(s);
+93:     sb.append("\n");
+94:   }
+95: } finally {
+96:   in.close();
+97: }
+98: } catch(IOException e) {
+99: throw new RuntimeException(e);
+100: }
+101: return sb.toString();
+102: }
+103: //Write a single file in one method call:
+104: public static void write(String fileName, String text) {
+105: try {
+106: PrintWriter out = new PrintWriter(
+107:   new File(fileName).getAbsoluteFile());
+108: try {
+109:   out.print(text);
+110: } finally {
+111:   out.close();
+112: }
+113: } catch(IOException e) {
+114: throw new RuntimeException(e);
+115: } }
+116: //Read a file, split by any regular expression:
+117: public TextFile(String fileName, String splitter) {
+118: super(Arrays.asList(read(fileName).split(splitter)));
+119: // Regular expression split() often leaves an empty
+120: // String at the first position:
+121: if(get(0).equals("")) remove(0);
+122: }
+123: //Normally read by lines:
+124: public TextFile(String fileName) {
+125: this(fileName, "\n");
+126: }
+127: public void write(String fileName) {
+128: try {
+129: PrintWriter out = new PrintWriter(
+130:   new File(fileName).getAbsoluteFile());
+131: try {
+132:   for(String item : this)
+133:     out.println(item);
+134: } finally {
+135:   out.close();
+136: }
+137: } catch(IOException e) {
+138: throw new RuntimeException(e);
+139: }
+140: }
+141: //Simple test:
+142: public static void main(String[] args) {
+143: String file = read("TextFile.java");
+144: write("test.txt", file);
+145: TextFile text = new TextFile("test.txt");
+146: // Break into unique sorted list of words:
+147: TreeSet<String> words = new TreeSet<String>(
+148: new TextFile("TextFile.java", "\\W+"));
+149: // Display the capitalized words:
+150: System.out.println(words.headSet("a"));
+151: }
+152: }

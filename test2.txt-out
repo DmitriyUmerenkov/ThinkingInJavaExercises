@@ -1,0 +1,77 @@
+76 : }
+75 : }
+74 : System.out.println(words.headSet("a"));
+73 : // Display the capitalized words:
+72 : new TextFile("TextFile.java", "\\W+"));
+71 : TreeSet<String> words = new TreeSet<String>(
+70 : // Break into unique sorted list of words:
+69 : text.write("test2.txt");
+68 : TextFile text = new TextFile("test.txt");
+67 : write("test.txt", file);
+66 : String file = read("TextFile.java");
+65 : public static void main(String[] args) {
+64 : //Simple test:
+63 : }
+62 : }
+61 : throw new RuntimeException(e);
+60 : } catch(IOException e) {
+59 : }
+58 :   out.close();
+57 : } finally {
+56 :     out.println(item);
+55 :   for(String item : this)
+54 : try {
+53 :   new File(fileName).getAbsoluteFile());
+52 : PrintWriter out = new PrintWriter(
+51 : try {
+50 : public void write(String fileName) {
+49 : }
+48 : this(fileName, "\n");
+47 : public TextFile(String fileName) {
+46 : //Normally read by lines:
+45 : }
+44 : if(get(0).equals("")) remove(0);
+43 : // String at the first position:
+42 : // Regular expression split() often leaves an empty
+41 : super(Arrays.asList(read(fileName).split(splitter)));
+40 : public TextFile(String fileName, String splitter) {
+39 : //Read a file, split by any regular expression:
+38 : } }
+37 : throw new RuntimeException(e);
+36 : } catch(IOException e) {
+35 : }
+34 :   out.close();
+33 : } finally {
+32 :   out.print(text);
+31 : try {
+30 :   new File(fileName).getAbsoluteFile());
+29 : PrintWriter out = new PrintWriter(
+28 : try {
+27 : public static void write(String fileName, String text) {
+26 : //Write a single file in one method call:
+25 : }
+24 : return sb.toString();
+23 : }
+22 : throw new RuntimeException(e);
+21 : } catch(IOException e) {
+20 : }
+19 :   in.close();
+18 : } finally {
+17 :   }
+16 :     sb.append("\n");
+15 :     sb.append(s);
+14 :       while((s = in.readLine()) != null) {
+13 :         String s;
+12 :       try {
+11 :         new File(fileName).getAbsoluteFile()));
+10 :       BufferedReader in= new BufferedReader(new FileReader(
+9 :     try {
+8 :     StringBuilder sb = new StringBuilder();
+7 :   public static String read(String fileName) {
+6 :   // Read a file as a single string:
+5 : public class TextFile extends ArrayList<String> {
+4 : 
+3 : import java.util.*;
+2 : import java.io.*;
+1 : 
+0 : package util;
